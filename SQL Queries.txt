@@ -1,0 +1,40 @@
+Create Database BakedInHeavenDB; //creating database
+
+
+// Creating tables//
+
+Create table User(UserID int NOT NULL PRIMARY KEY,
+FirstName varchar(20) NOT NULL,
+LastName varchar(20) NOT NULL,
+Password varchar(20) NOT NULL,
+IsAdmin bool NOT NULL);
+
+Create table Item(ItemID int NOT NULL PRIMARY KEY,
+ItemName varchar(20) NOT NULL UNIQUE,
+Quantity varchar(10) NOT NULL,
+WiegtinGrams int NOT NULL,
+Price varchar(15) NOT NULL,
+kal varchar(20) NOT NULL, 
+IsVegOrNonveg bool NOT NULL, 
+ISspecial bool NOT NULL, 
+AvailableDate DATETIME NOT NULL);
+
+Create table Order(OrderID int NOT NULL PRIMARY KEY, 
+UserID int NOT NULL FOREIGN KEY,
+ItemID int NOT NULL FOREIGN KEY,
+ItemName varchar(20) NOT NULL,
+Quantity int NOT NULL,
+Price varchar(15) NOT NULL,
+OrderDate DATETIME NOT NULL);
+
+
+//Inserting values//
+
+INSERT INTO User(UserID,FirstName,LastName,Password,IsAdmin)
+VALUES (1, 'Everly', 'William','eve@212 , false);
+
+INSERT INTO Item (ItemID, ItemName,Quantity,WeightinGrams,Price,kcal, IsVegOrNonveg, IsSpecial)
+VALUES (1, 'Vanilla Cake',1,500,400,1250,false,false,2021-02-02, 25);
+
+INSERT INTO Order(OrderID,CustomerID,ItemID, ItemName, Quantity, Price, OrderDate)
+VALUES (1, 1, 1,'Vanilla Cake', 1, 400,2021-02-02);

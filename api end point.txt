@@ -1,0 +1,8 @@
+//Restful APIs//
+
+//activities//
+
+GET/activities        //get all activities
+GET/activities/{id}  //gets the activities by identifier
+POST/activities      //add an activity
+PUT/activities{id}  //update the activity
